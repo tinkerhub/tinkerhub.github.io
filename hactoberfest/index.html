@@ -25,29 +25,29 @@
         <a class="navbar-brand" href="https://tinkerhub.org/">
     <img src="assets/nav-logo.png" width="30" height="30" class="d-inline-block align-top" alt="Visit Tinkerhub.org">
   Tinkerhub</a>
-        
     </div>
-
-    </div>
-
-
-        
-        <div class="container">
-           <h1>Tinkerhub HactoberFest Society</h1>   
-            <form id="myForm">
-                    <div class="row">
-                    <div class="col-sm">
-                        <label for="Name">Name:<span>*</span></label>
-                        <input name="Name" type="text" class="form-control" placeholder="Full Name" required>
+  </div>
+  <div class="container">
+    <h1>TinkerHub HactoberFest</h1>   
+  <form class="needs-validation" id="myForm" method="post" novalidate>
+                        <div class="row">
+                        <div class="col-sm">
+                        <label for="validationCustom01">Name:</label>
+                        <input type="text" class="form-control" id="validationCustom01" placeholder="First name" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-sm">
+                        <label for="validationCustom02">Github Username:</label>
+                        <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      
                     </div>
-   
-                    <div class="col-sm">
-                       <label for="Github_Username">Github Username:<span>*</span></label>
-                       <input name="Github_Username" id="Github_Username" type="text" class="form-control" placeholder="Github Username" required>
-                    </div>
-                   </div>
-
-                  <div class="row">
+                      <div class="row">
                     <div class="col-sm">
                         <label for="Email">Email:<span>*</span></label>
                        <input name="Email" id="Email" type="text" class="form-control" placeholder="example@email.com" required>
@@ -71,9 +71,7 @@
                     </div>
                    </div>
 
-
-
-           <div class="col-lg-4 mb-3 also">
+                    <div class="col-lg-4 mb-3 also">
                         <h6>Have you participated in the previous seasons of Hactoberfest?<span>*</span></h6>  
                         <div class="form-check form-check-inline">
                           <input class="form-check-input" type="radio" name="Question_1" id="Yes" value="Yes" required>
@@ -95,11 +93,68 @@
                           <label class="form-check-label" for="no2">No</label>
                         </div>
           </div>
-    </form>
-  <button class="btn btn-primary booty" id="reset" type="submit" onclick="SubForm()">Submit form</button>
-  <p id="msg"></p>
+
+
+
+  <div onclick="Subform()" id="reset"><button class="btn btn-primary" type="submit" >Submit</button></div>
+  <!-- <button class="btn btn-primary booty" id="reset" type="submit" onclick="SubForm()">Submit form</button> -->
+  <p id="msg">Submitted succefully</p>
+</form>
+</div>
+
+
+  <script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        event.preventDefault();
+        event.stopPropagation();
+        form.classList.add('was-validated');
+        if (form.checkValidity() === true) {
+          $.ajax({
+        url:'https://api.apispreadsheets.com/data/1622/',
+        type:'post',
+        data:$("#myForm").serializeArray(),
+        success: function success(){
+          document.getElementById('msg').innerHTML = "Submitted Successfully";
+          document.getElementById("reset").disabled = true;
+          
+          setTimeout("location.href = 'https://tinkerhub.org/';",1500);
+          
+        },
+        error: function error(){
+          document.getElementById('msg').innerHTML = "hmmm sm sm wrong";
+        }
+    });
+        }
+
+    
+      }, false);
+    });
+    
+  }, false);
+  
+})();
+
+</script>
+
+
+        
+        
+
   
 </div> 
-      <script src="assets/app.js"></script>
+      
 </body>
+<script src="assets/app.js"></script>
 </html>

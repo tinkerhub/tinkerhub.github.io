@@ -12,7 +12,7 @@ body{
 .container h1{
 	font-size: 3.5em;
 	font-weight: 200;
-	margin-left:1em;
+	margin-left:3em;
 	margin-bottom: 0; 
 	text-decoration: underline;	
 }
@@ -22,6 +22,7 @@ body{
 	padding: 15px 10px 10px 10px;
 	border: 1px solid black;
 	border-radius: 9px;
+    padding-bottom: 3em;
 	
 }
 
@@ -38,9 +39,11 @@ span{
 	
 
 #msg{
-	margin-top: -3em;
-	margin-bottom: 1em;
-	text-align: center;
+	margin-top: -2em;
+	margin-bottom:-1em;
+    margin-left:7em;
+	text-align: left;
+    text-transform: capitalize;
 	
 	
 
@@ -105,4 +108,24 @@ span{
 .also{
 	margin-top: 0.5em;
 }
+#msg{
+	margin-top: -2em;
+    margin-left: 3em;
+	margin-bottom: 1em;
+	text-align: center;
+	
+	
+
+}    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
