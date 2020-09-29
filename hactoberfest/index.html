@@ -56,7 +56,7 @@
 
                     <div class="col-sm">
                        <label for="Phone_Number">Phone Number:<span>*</span></label>
-                       <input name="Phone_Number" id="Github-Username" type="text" class="form-control" placeholder="+91-8888-8888-88" required>
+                       <input name="Phone_Number" id="Github-Username" type="text" class="form-control" placeholder="8888-8888-88" required>
                     </div>
                     </div>      
 
@@ -114,6 +114,14 @@
     // Loop over them and prevent submission
     var validation = Array.prototype.filter.call(forms, function(form) {
       form.addEventListener('submit', function(event) {
+        // val=false
+        document.querySelector('#myBtn').innerHTML = 'Oops!';
+        document.getElementById('myBtn').style.backgroundColor='Red';
+        setTimeout("document.querySelector('#myBtn').innerHTML = 'Submit';",1000);
+        setTimeout("document.getElementById('myBtn').style.backgroundColor='#0060FF';",1000);
+        document.getElementById('msg').innerHTML = "Fill them all!";
+        document.getElementById('msg').style.color='Red';
+        ///////
         if (form.checkValidity() === false) {
           event.preventDefault();
           event.stopPropagation();
@@ -122,17 +130,36 @@
         event.stopPropagation();
         form.classList.add('was-validated');
         if (form.checkValidity() === true) {
+          //after val=true ::before sub
+          document.querySelector('#myBtn').innerHTML = 'Submitting';
+          document.getElementById('myBtn').style.backgroundColor='#f0e130';
+          document.getElementById('msg').innerHTML = "working on it!";
+          document.getElementById('msg').style.color='Green';
+          ////////
           $.ajax({
         url:'https://api.apispreadsheets.com/data/1622/',
         type:'post',
         data:$("#myForm").serializeArray(),
         success: function success(){
-          document.getElementById('msg').innerHTML = "Submitted Successfully";
+          document.getElementById('msg').innerHTML = "Submitted Successfully!";
           document.getElementById("myBtn").disabled = true;
+          document.getElementById('myBtn').style.backgroundColor='Green';
+          document.querySelector('#myBtn').innerHTML = 'Submitted';
+          document.getElementById('msg').style.color='Green';
           document.getElementById("myForm").reset();
           },
         error: function error(){
-          document.getElementById('msg').innerHTML = "hmmm sm sm wrong";
+          document.getElementById('msg').innerHTML = "server error";
+          document.getElementById('msg').style.color='Red';
+          setTimeout("document.getElementById('msg').innerHTML = 'Try Again!';",1000);
+          setTimeout("document.getElementById('msg').style.color='Grey';",1000);
+
+          //
+          document.querySelector('#myBtn').innerHTML = 'Oops!';
+          document.getElementById('myBtn').style.backgroundColor='Red';
+          setTimeout("document.querySelector('#myBtn').innerHTML = 'Submit';",1000);
+          setTimeout("document.getElementById('myBtn').style.backgroundColor='#0060FF';",1000);
+          //
         }
     });
         }

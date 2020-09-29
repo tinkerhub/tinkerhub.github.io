@@ -41,10 +41,10 @@ span{
 #msg{
 	margin-top: -2em;
 	margin-bottom:-1em;
-    margin-left:7em;
+    margin-left:10em;
 	text-align: left;
     text-transform: capitalize;
-    color: red;
+    color: gray;
 	
 	
 
@@ -80,7 +80,7 @@ span{
 
 .booty{
 	margin-left: 1em;
-	margin-bottom: 2em;
+	margin-bottom: 0em;
 }
 
 .container h1{
@@ -111,9 +111,10 @@ span{
 }
 #msg{
 	margin-top: -2em;
-    margin-left: 3em;
+    margin-left: 4em;
 	margin-bottom: 1em;
 	text-align: center;
+    font-size: 0.1em;
 	
 	
 
