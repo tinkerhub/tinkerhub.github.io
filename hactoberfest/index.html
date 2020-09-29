@@ -32,15 +32,15 @@
   <form class="needs-validation" id="myForm" method="post" novalidate>
                         <div class="row">
                         <div class="col-sm">
-                        <label for="validationCustom01">Name:</label>
-                        <input type="text" class="form-control" id="validationCustom01" placeholder="First name" required>
+                        <label for="Name">Name:</label>
+                        <input type="text" class="form-control" name="Name" id="validationCustom01" placeholder="First name" required>
                         <div class="valid-feedback">
                           Looks good!
                         </div>
                       </div>
                       <div class="col-sm">
-                        <label for="validationCustom02">Github Username:</label>
-                        <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" required>
+                        <label for="Github-Username">Github Username:</label>
+                        <input type="text" class="form-control" name="Github-Username" id="validationCustom02" placeholder="Github-Username " required>
                         <div class="valid-feedback">
                           Looks good!
                         </div>
@@ -55,9 +55,9 @@
 
                     <div class="col-sm">
                        <label for="Phone_Number">Phone Number:<span>*</span></label>
-                       <input name="Phone_Number" id="Phone_Number" type="text" class="form-control" placeholder="+91-8888-8888-88" required>
+                       <input name="Phone_Number" id="Github-Username" type="text" class="form-control" placeholder="+91-8888-8888-88" required>
                     </div>
-                    </div>
+                    </div>      
 
                     <div class="row">
                     <div class="col-sm">
@@ -83,22 +83,22 @@
                         </div>
           </div>
           <div class="col-lg-4 mb-3">
-                        <h6>Did you successfully complete any of the previous Hactoberfest challenge?<span>*</span></h6> 
+                        <h6>How would you like to participate?<span>*</span></h6> 
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="Question_2" id="yes2" value="Yes" required>
-                          <label class="form-check-label" for="yes2">Yes</label>
+                          <input class="form-check-input" type="radio" name="Question_2" id="Mentor" value="Mentor" required>
+                          <label class="form-check-label" for="Mentor">Mentor</label>
                         </div>
                         <div class="form-check form-check-inline">
-                          <input class="form-check-input" type="radio" name="Question_2" id="no2" value="No" required>
-                          <label class="form-check-label" for="no2">No</label>
+                          <input class="form-check-input" type="radio" name="Question_2" id="Participant" value="Participant" required>
+                          <label class="form-check-label" for="Participant">Participant</label>
                         </div>
           </div>
 
 
 
-  <div onclick="Subform()" id="reset"><button class="btn btn-primary" type="submit" >Submit</button></div>
+  <div onclick="Subform()" id="reset"><button class="btn btn-primary" id="myBtn" type="submit" >Submit</button></div>
   <!-- <button class="btn btn-primary booty" id="reset" type="submit" onclick="SubForm()">Submit form</button> -->
-  <p id="msg">Submitted succefully</p>
+  <p id="msg"></p>
 </form>
 </div>
 
@@ -127,11 +127,9 @@
         data:$("#myForm").serializeArray(),
         success: function success(){
           document.getElementById('msg').innerHTML = "Submitted Successfully";
-          document.getElementById("reset").disabled = true;
-          
-          setTimeout("location.href = 'https://tinkerhub.org/';",1500);
-          
-        },
+          document.getElementById("myBtn").disabled = true;
+          document.getElementById("myForm").reset();
+          },
         error: function error(){
           document.getElementById('msg').innerHTML = "hmmm sm sm wrong";
         }
