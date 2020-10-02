@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;1,100&display=swap');
+body{
+    margin: 0;
+        
+}
+.navi{
+	margin-left: 1.2em;
+	margin-top: 1em;
+}
+
+.nav-contents{
+    margin-left: 68em;
+    margin-top: 0.4em;
+}
+.bold-p{
+    font-weight: bold;
+    
+}
+.space{
+    margin: 8em 8em;
+}.top-space{
+    margin: 5em 5em;
+    padding: 2em 2em;
+}
+.fwd{
+    height: 100vh;
+    background-color: white;
+    box-sizing: border-box;
+    font-family: "Roboto Mono"
+    
+}
+
+#title{
+    font-size: 3.6em;
+    margin-right: 0em;
+    padding-right: 0em; 
+}
+
+#qst{
+    font-size: 2em;
+}
+
+#para{
+    font-size: 1em;
+}
+
+.top-btn-bl{
+  background-color: #0060FF; 
+  border: none;
+  color: white;
+  margin-left: 1em;
+  padding: 8px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+hr.style-four {
+    height: 13px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+footer{
+  text-align: center;
+  margin-top: 1em;
+    
+}
+
+
+/*individual */
+
+.one-bg{ 
+    text-align: left;
+    margin-top: 8em;
+    margin-bottom: -10em;
+    padding-bottom: 0em;
+}
+
+
+.two-bg{ 
+    text-align: left;
+    margin-top: 5em;
+    margin-bottom: -5em;
+}
+
+
+.four-bg{ 
+    text-align: left;
+    margin-top: 5em;
+    margin-bottom: 0em;
+}
+
+
+
+/*responsive crap*/
+/*global*/
+@media only screen and (max-width: 600px) {
+.navi{
+  margin-left: 1.2em;
+  margin-top: 1em;
+}
+
+.nav-contents{
+    margin-left: 1.8em;
+    margin-top: 0.4em;
+}
+.top-btn-bl{
+  background-color: #0060FF; 
+  border: none;
+  color: white;
+  margin-left: 0.2em;
+  padding: 8px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.6em;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.nav-contents a{
+  font-size: 0.6em;
+
+}
+
+#title{
+    font-size: 1.5rem;
+    padding-right: 1em;
+    padding-top: 0em;
+    margin-right: 0; 
+}
+
+#qst{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#para{
+    font-size: 0.7em;
+    margin-right: 1em;
+}
+
+    
+/*individual*/
+.one-bg{ 
+    text-align: left;
+    margin-top:6em;
+    margin-bottom: -10em;
+    padding-bottom: 0em;
+}
+
+
+.two-bg{ 
+    text-align: left;
+    margin-top: 3em;
+    margin-bottom: -8em;
+}
+
+
+.four-bg{ 
+    text-align: left;
+    margin-top: 3em;
+    margin-bottom: -15em;
+}
+    
+    
+}
+
