@@ -10,8 +10,9 @@ body{
 
 .nav-contents{
     margin-left: 68em;
-    margin-top: 0.4em;
+    margin-top: 0em;
 }
+
 .bold-p{
     font-weight: bold;
     
@@ -19,8 +20,11 @@ body{
 .space{
     margin: 8em 8em;
 }.top-space{
-    margin: 5em 5em;
+    margin: 2em 2em;
     padding: 2em 2em;
+}
+.top-one-space{
+    margin: 4em 4em;
 }
 .fwd{
     height: 100vh;
@@ -29,11 +33,25 @@ body{
     font-family: "Roboto Mono"
     
 }
+#cards-t{
+    text-align: center;
+    border: 0.1px solid black;
+	border-radius: 9px;
+    margin-bottom: 3em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    
+}
+#cards-t h3{
+    margin-bottom: 2em;
+    
+}
 
 #title{
     font-size: 3.6em;
     margin-right: 0em;
     padding-right: 0em; 
+    text-decoration: underline;
 }
 
 #qst{
@@ -74,7 +92,7 @@ footer{
 .one-bg{ 
     text-align: left;
     margin-top: 8em;
-    margin-bottom: -10em;
+    margin-bottom: -15em;
     padding-bottom: 0em;
 }
 
@@ -82,14 +100,17 @@ footer{
 .two-bg{ 
     text-align: left;
     margin-top: 5em;
-    margin-bottom: -5em;
+    margin-bottom: -10em;
 }
 
 
 .four-bg{ 
     text-align: left;
-    margin-top: 5em;
-    margin-bottom: 0em;
+    margin-top: 3em;
+    margin-bottom: -12em;
+}
+.contact-bg{
+    margin-bottom: -10em;
 }
 
 
@@ -104,7 +125,7 @@ footer{
 
 .nav-contents{
     margin-left: 1.8em;
-    margin-top: 0.4em;
+    margin-top: 0em;
 }
 .top-btn-bl{
   background-color: #0060FF; 
@@ -122,6 +143,15 @@ footer{
 .nav-contents a{
   font-size: 0.6em;
 
+}
+.space{
+    margin: 5em 5em;
+}.top-space{
+    margin: 0;
+    padding: 1em 1em;
+}
+.top-one-space{
+    margin: 2em 2em;
 }
 
 #title{
@@ -145,7 +175,7 @@ footer{
 /*individual*/
 .one-bg{ 
     text-align: left;
-    margin-top:6em;
+    margin-top:4em;
     margin-bottom: -10em;
     padding-bottom: 0em;
 }
@@ -154,7 +184,102 @@ footer{
 .two-bg{ 
     text-align: left;
     margin-top: 3em;
-    margin-bottom: -8em;
+    margin-bottom: -6em;
+}
+
+
+.four-bg{ 
+    text-align: left;
+    margin-top: 3em;
+    margin-bottom: -15em;
+}
+#cards-t{
+    text-align: center;
+    border: 0.1px solid black;
+	border-radius: 9px;
+    margin-bottom: 15em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    
+}
+#cards-t h3{
+    margin-bottom: 2em;
+    font-size: 1.5em;
+    
+}
+    
+    
+}
+/*responsive crap*/
+/*global*/
+@media only screen and (max-width: 425px) {
+.navi{
+  margin-left: 1.2em;
+  margin-top: 1em;
+}
+
+.nav-contents{
+    margin-left: 3.5em;
+    margin-top: 0em;
+}
+.top-btn-bl{
+  background-color: #0060FF; 
+  border: none;
+  color: white;
+  margin-left: 0.2em;
+  padding: 8px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.6em;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.nav-contents a{
+  font-size: 0.6em;
+
+}
+.space{
+    margin: 5em 5em;
+}.top-space{
+    margin: 0;
+    padding: 1em 1em;
+}
+.top-one-space{
+    margin: 2em 2em;
+}
+
+#title{
+    font-size: 1.5rem;
+    padding-right: 1em;
+    padding-top: 0em;
+    margin-right: 0; 
+}
+
+#qst{
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#para{
+    font-size: 0.7em;
+    margin-right: 1em;
+}
+
+    
+/*individual*/
+.one-bg{ 
+    text-align: left;
+    margin-top:4em;
+    margin-bottom: -10em;
+    padding-bottom: 0em;
+}
+
+
+.two-bg{ 
+    text-align: left;
+    margin-top: 3em;
+    margin-bottom: -6em;
 }
 
 

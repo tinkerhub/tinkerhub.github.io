@@ -15,29 +15,37 @@
     <link rel="stylesheet" href="assets/bootstrap.css">
     <link rel="stylesheet" href="assets/land/stsyle.css">
     <link rel="stylesheet" href="assets/land/new.css">
+    <script src="https://kit.fontawesome.com/00c0663202.js" crossorigin="anonymous"></script>
   
-    <title>Landing Page</title>
+    <title>About</title>
 </head>
 <body>
-    <div  class="navi">
-            <div class="d-flex flex-grow-1">
-                <a class="navbar-brand" href="https://tinkerhub.org/">
-                <img src="assets/nav-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-                    Tinkerhub</a>
-                <div class="nav-contents">
-                <a href="#contact">Contact Us</a>
-                <button onclick="window.location.href='https://tinkerhub.org/hactoberfest'" type="button" class="top-btn-bl" >Get Started</button>
-                </div>
-            </div>
-            
-        </div>
-    
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="https://tinkerhub.org/"><img src="assets/nav-logo.png" width="30" height="30" class="d-inline-block align-top" alt=""> TinkerHub</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#contact">   Contact <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="top-btn-bl">Get Started</button>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
   
 
 <section class="fwd one-bg" id="one">
     <div class="container-sm">
         <div class="one-title">
         	<h1 id="title">HacktoberFest Mentorship Program</h1>
+            <div class="top-one-space"></div>
             <h3 id="qst">How does the Mentorship Program Work?</h3> 
             
         	   <p id="para">
@@ -92,9 +100,10 @@
 
 
 <hr class="style-four">
-<section class="fwd four-bg" id="two">
+<section class="fwd four-bg" id="three">
     <div class="container-sm">
         <div class="four-title">
+            <div class="top-space"></div>
         	<!--<h1 class="display-2">HacktoberFest Mentorship Program</h1> -->
             <h3 id="qst">What is actually HacktoberFest?</h3> 
             
@@ -102,17 +111,47 @@
             <p id="para">To earn your Hacktoberfest tee or tree reward, you must register and make <span class="bold-p">four valid pull requests (PRs) between October 1-31 (in any time zone)</span>. PRs can be made to any public repo on GitHub, not only the ones with issues labeled Hacktoberfest.If a maintainer reports your pull request as spam or behavior not in line with the project’s code of conduct, you will be ineligible to participate.<span class="bold-p">This year, the first 70,000 participants who successfully complete the challenge will be eligible to receive a prize.</span></p>
             <p id="para">To know more about the event ,visit <a href="https://hacktoberfest.digitalocean.com/">: hacktoberfest.digitalocean</a></p>
             </div>
-      	</div> 
-        <div class="container-sm">
-        <footer>Made with ♥ <a href="https://tinkerhub.org/">Tinkerhub</a></footer>
-        </div>
-      
-
+      	</div>
 </section>
-
-
-<!--
 <hr class="style-four">
+    
+<section class="fwd contact-bg" id="contact">
+            <div class="cards">
+            <div class="container" id="cards-t">
+            <h3 id="qst">More questions?Contact:</h3>
+            <div class="row justify-content-md-center">
+            <div class="col-sm-auto">
+            <div class="card" style="width: 18rem;">
+              <img src="assets/land/images/allen.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Allen P Biju</h5>
+                <h6 class="display-6">Project Initiative</h6>
+                <a href="mailto:me@allenpbiju1999@gmail.com" class="card-link"><i class="fas fa-envelope"></i></a>
+                  <a href="https://wa.me/917356410604" class="card-link"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+            </div>
+            <div class="col-sm-auto">
+            <div class="card" style="width: 18rem;">
+              <img src="assets/land/images/abhi.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Abhishek Baiju</h5>
+                <h6 class="display-6">Project Initiative</h6>
+                <a href="mailto:me@johnponnamkudam@gmail.com" class="card-link"><i class="fas fa-envelope"></i></a>
+                  <a href="https://wa.me/919809878285" class="card-link"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <footer>Made with ♥ <a href="https://tinkerhub.org/">Tinkerhub</a></footer>
+    </section>
+
+
+
+   <!--    
+<hr class="style-four">     
 <section class="fwd contact-bg" id="contact">
 	<div class="container">
 		<h1 class="display-6">Follow us for more updates</h1>
