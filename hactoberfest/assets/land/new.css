@@ -191,7 +191,8 @@ footer{
 .four-bg{ 
     text-align: left;
     margin-top: 3em;
-    margin-bottom: -15em;
+    margin-bottom: -10em;
+    padding-bottom: 3em;
 }
 #cards-t{
     text-align: center;
@@ -213,15 +214,7 @@ footer{
 /*responsive crap*/
 /*global*/
 @media only screen and (max-width: 425px) {
-.navi{
-  margin-left: 1.2em;
-  margin-top: 1em;
-}
 
-.nav-contents{
-    margin-left: 3.5em;
-    margin-top: 0em;
-}
 .top-btn-bl{
   background-color: #0060FF; 
   border: none;
@@ -235,10 +228,7 @@ footer{
   border-radius: 5px;
   text-decoration: none;
 }
-.nav-contents a{
-  font-size: 0.6em;
 
-}
 .space{
     margin: 5em 5em;
 }.top-space{
@@ -286,8 +276,23 @@ footer{
 .four-bg{ 
     text-align: left;
     margin-top: 3em;
-    margin-bottom: -15em;
+    margin-bottom: -10em;
 }
+#cards-t{
+    text-align: center;
+    border: 0.1px solid black;
+	border-radius: 9px;
+    margin-bottom: -9em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    
+}
+#cards-t h3{
+    margin-bottom: 2em;
+    font-size: 1.5em;
+    
+}
+      
     
     
 }
