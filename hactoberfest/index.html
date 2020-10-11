@@ -16,10 +16,12 @@
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous">
 </script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/00c0663202.js" crossorigin="anonymous"></script>
+
 <style type="text/css">
 	.top-btn-bl{
 	  background-color: #0060FF; 
@@ -57,7 +59,7 @@
   </div>
 </nav>
             <div class="container">
-                <h1>TinkerHub HacktoberFest</h1> 
+                <h1 id="title">TinkerHub HacktoberFest</h1> 
       
                 <form class="needs-validation" id="myForm" method="post" novalidate>
                         <div class="row">
@@ -85,40 +87,40 @@
 
                     <div class="col-sm">
                        <label for="Phone_Number">Phone Number:<span>*</span></label>
-                       <input name="Phone_Number" id="Github-Username" type="text" class="form-control" placeholder="8888-8888-88" required>
+                       <input name="Phone_Number" id="Phone_Number" type="text" class="form-control" placeholder="8888-8888-88" required>
                     </div>
                     </div>      
 
                     <div class="row">
                     <div class="col-sm">
                         <label for="College">College:<span>*</span></label>
-                        <input name="College" type="text" class="form-control" placeholder="College" required>
+                        <input name="College" id="College" type="text" class="form-control" placeholder="College" required>
                     </div>
    
                     <div class="col-sm">
                        <label for="Branch">Branch<span>*</span></label>
-                       <input name="Branch" id="Branch" type="text" class="form-control" placeholder="Branch of Study" required>
+                       <input name="Branch" id="Branch" id="Branch" type="text" class="form-control" placeholder="Branch of Study" required>
                     </div>
                    </div>
 
                     <div class="col-lg-4 mb-3 also">
                         <h6>Have you participated in the previous seasons of Hactoberfest?<span>*</span></h6>  
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline" id="selcet_1">
                           <input class="form-check-input" type="radio" name="Question_1" id="Yes" value="Yes" required>
                           <label class="form-check-label" for="Yes">Yes</label>
                         </div>
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline" id="selcet_2">
                           <input class="form-check-input" type="radio" name="Question_1" id="no" value="No" required>
                           <label class="form-check-label" for="no">No</label>
                         </div>
                     </div>
                     <div class="col-lg-4 mb-3">
                         <h6>How would you like to participate?<span>*</span></h6> 
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline" id="selcet_3">
                           <input class="form-check-input" type="radio" name="Question_2" id="Mentor" value="Mentor" required>
                           <label class="form-check-label" for="Mentor">Mentor</label>
                         </div>
-                        <div class="form-check form-check-inline">
+                        <div class="form-check form-check-inline" id="selcet_4">
                           <input class="form-check-input" type="radio" name="Question_2" id="Participant" value="Participant" required>
                           <label class="form-check-label" for="Participant">Participant</label>
                         </div>
@@ -175,12 +177,26 @@
           document.getElementById('myBtn').style.backgroundColor='Green';
           document.querySelector('#myBtn').innerHTML = 'Submitted';
           document.getElementById('msg').style.color='Green';
-          document.getElementById("myForm").reset();
+          setTimeout("document.getElementById('msg').innerHTML = 'You will get an email in 24hrs!';",1500);
+          //disabling form
+          document.getElementById("validationCustom01").disabled = true;
+          document.getElementById("validationCustom02").disabled = true;
+          document.getElementById("Phone_Number").disabled = true;
+          document.getElementById("Email").disabled = true;
+          document.getElementById("College").disabled = true;
+          document.getElementById("Branch").disabled = true;
+          //redirect
+          setTimeout("document.getElementById('msg').innerHTML = 'Redirecting....';",4000);
+          setTimeout("window.open('https://tinkerhub.org/hactoberfest/about', '_blank');",6000);
+          setTimeout("document.getElementById('msg').innerHTML = 'You will get an email in 24hrs!';",7500);
+
+          //document.getElementById("myForm").reset();
+
           },
         error: function error(){
           document.getElementById('msg').innerHTML = "server error";
           document.getElementById('msg').style.color='Red';
-          setTimeout("document.getElementById('msg').innerHTML = 'Try Again!';",1000);
+          setTimeout("document.getElementById('msg').innerHTML = 'Try Again later, Sorry for inconvenience.';",1000);
           setTimeout("document.getElementById('msg').style.color='Grey';",1000);
 
           //
