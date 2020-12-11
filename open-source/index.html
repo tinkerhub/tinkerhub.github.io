@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="open source, tinkerhub, webpages, development, learn, HTML, CSS, JavaScript">
+    <meta name="description" content="A webpage to promote Open source Contributions">
+    <link rel="shortcut icon" href="assets/nav-logo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/00c0663202.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://unpkg.com/plyr@3/dist/plyr.css'><link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    
+
+
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;1,100&display=swap');
+	body{
+    margin: 0;
+    font-family: "Roboto Mono";
+    
+    /* height: 90vh; */
+    background-color:white;
+	}
+    .containeri {
+	margin: 20px auto;
+	max-width: 500px;
+}
+    </style>
+    </head>
+    <body>
+        <div class="all shadow-lg ml-3 mr-3 my-3 pb-1">
+            
+            <div class="container">
+                <h1>What is Opensource?</h1>
+                <p>Open-source software is a type of computer software in which source code is released under a license in which the copyright holder grants users the rights to use, study, change, and distribute the software to anyone and for any purpose. The perfect Wikipedia definition !! Cutting short opensource is fun 😍 !</p>
+                <h1>How to contribute to open-source projects?</h1>
+                <p>Now you are aware of what opensource is, but how is it done? We have all our open-source projects hosted on github.com. Watch this video to know how to make your first open-source contribution.</p>
+                <!-- <iframe allowFullScreen="allowFullScreen" src="https://www.youtube.com/embed/dSl_qnWO104?ecver=1&amp;cc_load_policy=1&amp;iv_load_policy=3&amp;rel=0&amp;showinfo=0&amp;yt:stretch=16:9&amp;autohide=1&amp;color=white&amp;width=560&amp;width=560" width="560" height="315" allowtransparency="true" frameborder="0"><div><a  id="TjCoLxh5" href="https://www.abcmoney.co.uk/2020/10/08/how-has-covid-19-affected-used-car-prices-two-experts-give-their-opinion">affected car resale</a></div><div><a  id="TjCoLxh5" href="https://www.abcmoney.co.uk/2020/10/08/how-has-covid-19-affected-used-car-prices-two-experts-give-their-opinion/">Covid car prices</a></div><script type="text/javascript">function execute_YTvideo(){return youtube.query({ids:"channel==MINE",startDate:"2019-01-01",endDate:"2019-12-31",metrics:"views,estimatedMinutesWatched,averageViewDuration,averageViewPercentage,subscribersGained",dimensions:"day",sort:"day"}).then(function(e){},function(e){console.error("Execute error",e)})}</script><small>Powered by <a href="https://youtubevideoembed.com/ ">Embed YouTube Video</a></small></iframe> -->
+                <h1>Opensource with TinkerHub</h1>
+                <p>Tinkerhub has got a handful of opportunities for Opensource contributors. We are currently having projects where beginners as well as experts can contribute. Have a look at our ongoing opensource projects at https://github.com/tinkerhub-org .</p>
+
+
+
+                <div class="containeri">
+                    <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="dSl_qnWO104"></div>
+                </div>
+
+
+
+            </div>
+           
+        </div>
+        <script src='https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL'></script>
+        <script src='https://unpkg.com/plyr@3'></script>
+        <script>
+            const player = new Plyr('#player', {});
+            window.player = player;
+        </script>
+    </body>
