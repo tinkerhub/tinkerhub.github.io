@@ -1,802 +1,638 @@
-<html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>TinkerHub Foundation</title><link rel="icon" href="hactoberfest/assets/nav-logo.png"><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
 
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>TinkerHub Foundation</title>
-    <link rel="icon" href="hactoberfest/assets/nav-logo.png">
-    <style>
-        /* webkit printing magic: print all background colors */
-        html {
-        	-webkit-print-color-adjust: exact;
-        }
-        * {
-        	box-sizing: border-box;
-        	-webkit-print-color-adjust: exact;
-        }
-        
-        html,
-        body {
-        	margin: 0;
-        	padding: 0;
-        }
-        @media only screen {
-        	body {
-        		margin: 2em auto;
-        		max-width: 900px;
-        		color: rgb(55, 53, 47);
-        	}
-        }
-        
-        body {
-        	line-height: 1.5;
-        	white-space: pre-wrap;
-        }
-        
-        a,
-        a.visited {
-        	color: inherit;
-        	text-decoration: underline;
-        }
-        
-        .pdf-relative-link-path {
-        	font-size: 80%;
-        	color: #444;
-        }
-        
-        h1,
-        h2,
-        h3 {
-        	letter-spacing: -0.01em;
-        	line-height: 1.2;
-        	font-weight: 600;
-        	margin-bottom: 0;
-        }
-        
-        .page-title {
-        	font-size: 2.5rem;
-        	font-weight: 700;
-        	margin-top: 0;
-        	margin-bottom: 0.75em;
-        }
-        
-        h1 {
-        	font-size: 1.875rem;
-        	margin-top: 1.875rem;
-        }
-        
-        h2 {
-        	font-size: 1.5rem;
-        	margin-top: 1.5rem;
-        }
-        
-        h3 {
-        	font-size: 1.25rem;
-        	margin-top: 1.25rem;
-        }
-        
-        .source {
-        	border: 1px solid #ddd;
-        	border-radius: 3px;
-        	padding: 1.5em;
-        	word-break: break-all;
-        }
-        
-        .callout {
-        	border-radius: 3px;
-        	padding: 1rem;
-        }
-        
-        figure {
-        	margin: 1.25em 0;
-        	page-break-inside: avoid;
-        }
-        
-        figcaption {
-        	opacity: 0.5;
-        	font-size: 85%;
-        	margin-top: 0.5em;
-        }
-        
-        mark {
-        	background-color: transparent;
-        }
-        
-        .indented {
-        	padding-left: 1.5em;
-        }
-        
-        hr {
-        	background: transparent;
-        	display: block;
-        	width: 100%;
-        	height: 1px;
-        	visibility: visible;
-        	border: none;
-        	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-        }
-        
-        img {
-        	max-width: 100%;
-        }
-        
-        @media only print {
-        	img {
-        		max-height: 100vh;
-        		object-fit: contain;
-        	}
-        }
-        
-        @page {
-        	margin: 1in;
-        }
-        
-        .collection-content {
-        	font-size: 0.875rem;
-        }
-        
-        .column-list {
-        	display: flex;
-        	justify-content: space-between;
-        }
-        
-        .column {
-        	padding: 0 1em;
-        }
-        
-        .column:first-child {
-        	padding-left: 0;
-        }
-        
-        .column:last-child {
-        	padding-right: 0;
-        }
-        
-        .table_of_contents-item {
-        	display: block;
-        	font-size: 0.875rem;
-        	line-height: 1.3;
-        	padding: 0.125rem;
-        }
-        
-        .table_of_contents-indent-1 {
-        	margin-left: 1.5rem;
-        }
-        
-        .table_of_contents-indent-2 {
-        	margin-left: 3rem;
-        }
-        
-        .table_of_contents-indent-3 {
-        	margin-left: 4.5rem;
-        }
-        
-        .table_of_contents-link {
-        	text-decoration: none;
-        	opacity: 0.7;
-        	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-        }
-        
-        table,
-        th,
-        td {
-        	border: 1px solid rgba(55, 53, 47, 0.09);
-        	border-collapse: collapse;
-        }
-        
-        table {
-        	border-left: none;
-        	border-right: none;
-        }
-        
-        th,
-        td {
-        	font-weight: normal;
-        	padding: 0.25em 0.5em;
-        	line-height: 1.5;
-        	min-height: 1.5em;
-        	text-align: left;
-        }
-        
-        th {
-        	color: rgba(55, 53, 47, 0.6);
-        }
-        
-        ol,
-        ul {
-        	margin: 0;
-        	margin-block-start: 0.6em;
-        	margin-block-end: 0.6em;
-        }
-        
-        li > ol:first-child,
-        li > ul:first-child {
-        	margin-block-start: 0.6em;
-        }
-        
-        ul > li {
-        	list-style: disc;
-        }
-        
-        ul.to-do-list {
-        	text-indent: -1.7em;
-        }
-        
-        ul.to-do-list > li {
-        	list-style: none;
-        }
-        
-        .to-do-children-checked {
-        	text-decoration: line-through;
-        	opacity: 0.375;
-        }
-        
-        ul.toggle > li {
-        	list-style: none;
-        }
-        
-        ul {
-        	padding-inline-start: 1.7em;
-        }
-        
-        ul > li {
-        	padding-left: 0.1em;
-        }
-        
-        ol {
-        	padding-inline-start: 1.6em;
-        }
-        
-        ol > li {
-        	padding-left: 0.2em;
-        }
-        
-        .mono ol {
-        	padding-inline-start: 2em;
-        }
-        
-        .mono ol > li {
-        	text-indent: -0.4em;
-        }
-        
-        .toggle {
-        	padding-inline-start: 0em;
-        	list-style-type: none;
-        }
-        
-        /* Indent toggle children */
-        .toggle > li > details {
-        	padding-left: 1.7em;
-        }
-        
-        .toggle > li > details > summary {
-        	margin-left: -1.1em;
-        }
-        
-        .selected-value {
-        	display: inline-block;
-        	padding: 0 0.5em;
-        	background: rgba(206, 205, 202, 0.5);
-        	border-radius: 3px;
-        	margin-right: 0.5em;
-        	margin-top: 0.3em;
-        	margin-bottom: 0.3em;
-        	white-space: nowrap;
-        }
-        
-        .collection-title {
-        	display: inline-block;
-        	margin-right: 1em;
-        }
-        
-        time {
-        	opacity: 0.5;
-        }
-        
-        .icon {
-        	display: inline-block;
-        	max-width: 1.2em;
-        	max-height: 1.2em;
-        	text-decoration: none;
-        	vertical-align: text-bottom;
-        	margin-right: 0.5em;
-        }
-        
-        img.icon {
-        	border-radius: 3px;
-        }
-        
-        .user-icon {
-        	width: 1.5em;
-        	height: 1.5em;
-        	border-radius: 100%;
-        	margin-right: 0.5rem;
-        }
-        
-        .user-icon-inner {
-        	font-size: 0.8em;
-        }
-        
-        .text-icon {
-        	border: 1px solid #000;
-        	text-align: center;
-        }
-        
-        .page-cover-image {
-        	display: block;
-        	object-fit: cover;
-        	width: 100%;
-        	height: 30vh;
-        }
-        
-        .page-header-icon {
-        	font-size: 3rem;
-        	margin-bottom: 1rem;
-        }
-        
-        .page-header-icon-with-cover {
-        	margin-top: -0.72em;
-        	margin-left: 0.07em;
-        }
-        
-        .page-header-icon img {
-        	border-radius: 3px;
-        }
-        
-        .link-to-page {
-        	margin: 1em 0;
-        	padding: 0;
-        	border: none;
-        	font-weight: 500;
-        }
-        
-        p > .user {
-        	opacity: 0.5;
-        }
-        
-        td > .user,
-        td > time {
-        	white-space: nowrap;
-        }
-        
-        input[type="checkbox"] {
-        	transform: scale(1.5);
-        	margin-right: 0.6em;
-        	vertical-align: middle;
-        }
-        
-        p {
-        	margin-top: 0.5em;
-        	margin-bottom: 0.5em;
-        }
-        
-        .image {
-        	border: none;
-        	margin: 1.5em 0;
-        	padding: 0;
-        	border-radius: 0;
-        	text-align: center;
-        }
-        
-        .code,
-        code {
-        	background: rgba(135, 131, 120, 0.15);
-        	border-radius: 3px;
-        	padding: 0.2em 0.4em;
-        	border-radius: 3px;
-        	font-size: 85%;
-        	tab-size: 2;
-        }
-        
-        code {
-        	color: #eb5757;
-        }
-        
-        .code {
-        	padding: 1.5em 1em;
-        }
-        
-        .code-wrap {
-        	white-space: pre-wrap;
-        	word-break: break-all;
-        }
-        
-        .code > code {
-        	background: none;
-        	padding: 0;
-        	font-size: 100%;
-        	color: inherit;
-        }
-        
-        blockquote {
-        	font-size: 1.25em;
-        	margin: 1em 0;
-        	padding-left: 1em;
-        	border-left: 3px solid rgb(55, 53, 47);
-        }
-        
-        .bookmark {
-        	text-decoration: none;
-        	max-height: 8em;
-        	padding: 0;
-        	display: flex;
-        	width: 100%;
-        	align-items: stretch;
-        }
-        
-        .bookmark-title {
-        	font-size: 0.85em;
-        	overflow: hidden;
-        	text-overflow: ellipsis;
-        	height: 1.75em;
-        	white-space: nowrap;
-        }
-        
-        .bookmark-text {
-        	display: flex;
-        	flex-direction: column;
-        }
-        
-        .bookmark-info {
-        	flex: 4 1 180px;
-        	padding: 12px 14px 14px;
-        	display: flex;
-        	flex-direction: column;
-        	justify-content: space-between;
-        }
-        
-        .bookmark-image {
-        	width: 33%;
-        	flex: 1 1 180px;
-        	display: block;
-        	position: relative;
-        	object-fit: cover;
-        	border-radius: 1px;
-        }
-        
-        .bookmark-description {
-        	color: rgba(55, 53, 47, 0.6);
-        	font-size: 0.75em;
-        	overflow: hidden;
-        	max-height: 4.5em;
-        	word-break: break-word;
-        }
-        
-        .bookmark-href {
-        	font-size: 0.75em;
-        	margin-top: 0.25em;
-        }
-        
-        .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-        .code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
-        .serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
-        .mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-        .pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-        
-        .pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-        
-        .pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
-        
-        .pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
-        
-        .highlight-default {
-        }
-        .highlight-gray {
-        	color: rgb(155,154,151);
-        }
-        .highlight-brown {
-        	color: rgb(100,71,58);
-        }
-        .highlight-orange {
-        	color: rgb(217,115,13);
-        }
-        .highlight-yellow {
-        	color: rgb(223,171,1);
-        }
-        .highlight-teal {
-        	color: rgb(15,123,108);
-        }
-        .highlight-blue {
-        	color: rgb(11,110,153);
-        }
-        .highlight-purple {
-        	color: rgb(105,64,165);
-        }
-        .highlight-pink {
-        	color: rgb(173,26,114);
-        }
-        .highlight-red {
-        	color: rgb(224,62,62);
-        }
-        .highlight-gray_background {
-        	background: rgb(235,236,237);
-        }
-        .highlight-brown_background {
-        	background: rgb(233,229,227);
-        }
-        .highlight-orange_background {
-        	background: rgb(250,235,221);
-        }
-        .highlight-yellow_background {
-        	background: rgb(251,243,219);
-        }
-        .highlight-teal_background {
-        	background: rgb(221,237,234);
-        }
-        .highlight-blue_background {
-        	background: rgb(221,235,241);
-        }
-        .highlight-purple_background {
-        	background: rgb(234,228,242);
-        }
-        .highlight-pink_background {
-        	background: rgb(244,223,235);
-        }
-        .highlight-red_background {
-        	background: rgb(251,228,228);
-        }
-        .block-color-default {
-        	color: inherit;
-        	fill: inherit;
-        }
-        .block-color-gray {
-        	color: rgba(55, 53, 47, 0.6);
-        	fill: rgba(55, 53, 47, 0.6);
-        }
-        .block-color-brown {
-        	color: rgb(100,71,58);
-        	fill: rgb(100,71,58);
-        }
-        .block-color-orange {
-        	color: rgb(217,115,13);
-        	fill: rgb(217,115,13);
-        }
-        .block-color-yellow {
-        	color: rgb(223,171,1);
-        	fill: rgb(223,171,1);
-        }
-        .block-color-teal {
-        	color: rgb(15,123,108);
-        	fill: rgb(15,123,108);
-        }
-        .block-color-blue {
-        	color: rgb(11,110,153);
-        	fill: rgb(11,110,153);
-        }
-        .block-color-purple {
-        	color: rgb(105,64,165);
-        	fill: rgb(105,64,165);
-        }
-        .block-color-pink {
-        	color: rgb(173,26,114);
-        	fill: rgb(173,26,114);
-        }
-        .block-color-red {
-        	color: rgb(224,62,62);
-        	fill: rgb(224,62,62);
-        }
-        .block-color-gray_background {
-        	background: rgb(235,236,237);
-        }
-        .block-color-brown_background {
-        	background: rgb(233,229,227);
-        }
-        .block-color-orange_background {
-        	background: rgb(250,235,221);
-        }
-        .block-color-yellow_background {
-        	background: rgb(251,243,219);
-        }
-        .block-color-teal_background {
-        	background: rgb(221,237,234);
-        }
-        .block-color-blue_background {
-        	background: rgb(221,235,241);
-        }
-        .block-color-purple_background {
-        	background: rgb(234,228,242);
-        }
-        .block-color-pink_background {
-        	background: rgb(244,223,235);
-        }
-        .block-color-red_background {
-        	background: rgb(251,228,228);
-        }
-        .select-value-color-default { background-color: rgba(206,205,202,0.5); }
-        .select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
-        .select-value-color-brown { background-color: rgba(140,46,0,0.2); }
-        .select-value-color-orange { background-color: rgba(245,93,0,0.2); }
-        .select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
-        .select-value-color-green { background-color: rgba(0,135,107,0.2); }
-        .select-value-color-blue { background-color: rgba(0,120,223,0.2); }
-        .select-value-color-purple { background-color: rgba(103,36,222,0.2); }
-        .select-value-color-pink { background-color: rgba(221,0,129,0.2); }
-        .select-value-color-red { background-color: rgba(255,0,26,0.2); }
-        
-        .checkbox {
-        	display: inline-flex;
-        	vertical-align: text-bottom;
-        	width: 16;
-        	height: 16;
-        	background-size: 16px;
-        	margin-left: 2px;
-        	margin-right: 5px;
-        }
-        
-        .checkbox-on {
-        	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-        }
-        
-        .checkbox-off {
-        	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-        }
-    </style>
-</head>
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
 
-<body>
-    <article id="4c411e18-e262-43b8-99b7-c9a5533458de" class="page sans">
-        <header>
-            <h1 class="page-title">TinkerHub Foundation</h1>
-        </header>
-        <div class="page-body">
-            <p id="ca84e42b-1c13-4b88-a7fb-5c6597f76740" class="block-color-gray">We are a community of tinkerers, makers, policy geeks &amp; students and are working towards mapping and empowering people who share a passion to innovate.</p>
-            <p id="81e464a0-965b-4621-b14b-7c86bb644dc0" class="">
-            </p>
-            <hr id="63c450e9-b9be-404b-82ff-9a3fe508fb5c" />
-            <div id="61b0063f-2fb0-4025-9934-d051e5a2173a" class="column-list">
-                <div id="cf84f2cc-5f79-482c-9af4-2ad24827d235" style="width:33.33333333333333%" class="column">
-                    <figure id="9b1485d8-c4b9-44e5-b187-77a25af02f89" class="link-to-page"><a href="https://www.notion.so/Philosophy-9b1485d8c4b944e5b18777a25af02f89"><span class="icon">🌱</span>Philosophy </a></figure>
-                    <figure id="dd4b7b4c-19fc-4038-8b0d-941f80880f09" class="link-to-page"><a href="https://www.notion.so/PyLad-dd4b7b4c19fc40388b0d941f80880f09"><span class="icon">🐍</span>PyLad</a></figure>
-                </div>
-                <div id="c0fbf0a2-364d-4ca4-b8c4-1da1a3df50db" style="width:33.33333333333333%" class="column">
-                    <figure id="0f4db9be-ef6b-499f-a809-7321d8a2a3ab" class="link-to-page"><a href="https://www.notion.so/Resources-0f4db9beef6b499fa8097321d8a2a3ab"><span class="icon">🍰</span>Resources</a></figure>
-                    <p id="d915219a-2af0-4e1c-805b-e910dbf9706b" class="">📝 <a href="https://medium.com/tinkerhub"><strong>Blog</strong></a></p>
-                </div>
-                <div id="e21560cf-46f0-43c6-9204-ecfd4cbce466" style="width:33.33333333333333%" class="column">
-                    <figure id="4125e96b-625b-4ea7-8b02-b387a937207a" class="link-to-page"><a href="https://www.notion.so/Join-us-4125e96b625b4ea78b02b387a937207a"><span class="icon">💝</span>Join us</a></figure>
-                    <p id="a3c23f43-46c9-4f3c-a81d-11ff58e4d9b1" class="">🤙 <a href="mailto:hello@tinkerhub.org"><strong>Contact</strong></a></p>
-                </div>
-            </div>
-            <hr id="e054b331-109c-4afb-b736-912d621fda11" />
-            <p id="da8abdc9-9ec6-4024-8e0d-3ce764b11f33" class="">
-            </p>
-            <div id="5fb57600-ddb6-4937-b0bf-3207f4c4eed5" class="column-list">
-                <div id="ece4e1e8-918b-411c-a0cb-3837bf4072a6" style="width:18.75%" class="column">
-                    <h3 id="37a09bd1-d2cd-43ba-b454-520a7cbe2d54" class="block-color-orange"><mark class="highlight-orange_background">Why we exist</mark></h3>
-                </div>
-                <div id="077bcb9d-ba6b-4148-a580-80301c961740" style="width:81.25%" class="column">
-                    <blockquote id="62897eb7-85d8-4a90-b931-f72e249e84c2" class="">The world is changing, and we want India to be ready. We&#x27;re here to make sure that everyone has access to the knowledge required to set the course for a better future.</blockquote>
-                </div>
-            </div>
-            <hr id="b66add59-abf0-4f7f-a5bb-f045c1e46a5b" />
-            <p id="f12973d9-6e75-46df-8ecd-6d71e6ddef5b" class="">
-            </p>
-            <div id="077497fa-bce3-430d-9904-835c7e3eb314" class="column-list">
-                <div id="b5c30c73-93cf-43d3-9a8e-fd9744f846e2" style="width:56.25%" class="column">
-                    <h3 id="a87e0454-4c29-4e7a-9f14-82e2bc2904a0" class=""><mark class="highlight-teal_background">Why it matters</mark></h3>
-                    <h1 id="7ba372ed-d409-4003-b036-caacabbee24d" class=""><em>Because </em>we believe that digital skills are tools of empowerment. </h1>
-                    <p id="6d3ca63c-366e-4ec0-af1b-ee92cb071316" class="">
-                    </p>
-                    <figure id="96f2f937-d408-4eaf-bee5-95b40e209f3f" class="image">
-                        <a href="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/IMG_5038.jpg"><img style="width:480px" src="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/IMG_5038.jpg" /></a>
-                        <figcaption>📸 KuttyCoders Community</figcaption>
-                    </figure>
-                </div>
-                <div id="a5311e4c-1bec-4ed6-8e12-53e2d081a229" style="width:43.75%" class="column">
-                    <figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ec05cc4e-d346-4cd0-90fc-4cf573cf9c26">
-                        <div style="font-size:1.5em"><span class="icon">⛑</span></div>
-                        <div style="width:100%"><strong>40% of employers say a lack of skills is the main reason for entry-level vacancies.</strong> - &#x27;Education to Employment: Designing a System that Works&#x27;, McKinsey 2013</div>
-                    </figure>
-                    <figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="28d78569-190e-479a-b28b-acd371f8c004">
-                        <div style="font-size:1.5em"><span class="icon">👩🏽‍💻</span></div>
-                        <div style="width:100%"><strong>Computer Science skills are 65% of the highest value skills </strong>- Analysis by Burning Glass Technologies 2016</div>
-                    </figure>
-                    <figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="701b6d73-7400-4629-a684-251582fe5571">
-                        <div style="font-size:1.5em"><span class="icon">😍</span></div>
-                        <div style="width:100%"><strong>By 2030, 80% of the jobs requires some amount of technical skills</strong></div>
-                    </figure>
-                    <p id="2ccf3fc6-05fe-45d0-ab08-bd0412716899" class=""><a href="https://www.notion.so/Bible-4444dc2a6d6b4359a7bc303fec7aa168#ab6143a18826409cbcae555039c0763b"><mark class="highlight-red">Read more </mark></a><mark class="highlight-red">⇒ </mark></p>
-                    <p id="82601b67-69b5-4b57-bcd1-e48a559e718f" class="">
-                    </p>
-                </div>
-            </div>
-            <hr id="d2caac5f-5380-48bf-9408-891d014a04c1" />
-            <p id="1c1d9ebd-9557-4eab-b252-73fd0bdb82cf" class="">
-            </p>
-            <div id="6a1bac3c-17e6-4666-96f7-cc29e9502697" class="column-list">
-                <div id="68207bae-adfe-44b1-b512-946448cfdee4" style="width:18.75%" class="column">
-                    <h3 id="49bbac8c-6cf3-438c-acb3-d6e234d37bf9" class=""><mark class="highlight-pink_background">How we achieve it</mark></h3>
-                </div>
-                <div id="abacfc17-f985-4f6f-a10d-711d6c5f2cb7" style="width:81.25%" class="column">
-                    <p id="b0a69891-5152-4f4d-b808-9e3925c5f4e6" class="">At TinkerHub, we take pride in<strong> learning on our own and from peers</strong>. That&#x27;s right! We also have a fun team of super cool mentors who take you from beginner to super-coder and collaborator - with tons of help from you, of course! </p>
-                </div>
-            </div>
-            <div id="a4fc5b92-2247-4ea0-b82e-a9403f9de401" class="column-list">
-                <div id="b6d93920-6b08-4404-8d1f-2981fcc71ffb" style="width:49.99999999999999%" class="column">
-                    <blockquote id="3563ea32-6bb5-4318-9b61-1c6d5d87bba8" class="">By creating learning experiences that connect, inspire, and engage </blockquote>
-                </div>
-                <div id="84b7e1cd-8657-4d6e-a01b-d35da18d10f6" style="width:50.000000000000014%" class="column">
-                    <blockquote id="066b167d-b936-4c7e-826b-d4ba8fb361c0" class="">By promoting a sense of community and belonging </blockquote>
-                </div>
-            </div>
-            <div id="7d511b22-49e6-4b2a-a4e1-542e468be687" class="column-list">
-                <div id="cf38db8f-5e2a-4637-8369-6506fb8ad912" style="width:50%" class="column">
-                    <blockquote id="d883f9a2-f273-45d9-8387-8a27433c132a" class="">By enabling hands-on learning experience with a focus on peer to peer learning techniques </blockquote>
-                </div>
-                <div id="651aa4d0-7238-4064-9e66-31b8dcf1864e" style="width:50%" class="column">
-                    <blockquote id="c6f09bbf-8cac-49e9-a023-1ba06bcb7984" class="">By giving students exposure to internships, career opportunity and scholarships around the world</blockquote>
-                </div>
-            </div>
-            <p id="3453f760-52f5-4627-8cf7-d93f97e03828" class=""><mark class="highlight-red"><a href="https://www.notion.so/tinkerhub/How-we-achieve-it-7dcf4b40c96c498aa2f7f561876665b3">See the detailed plan here</a></mark><mark class="highlight-red"> ⇒ </mark></p>
-            <p id="7062199a-4034-4d6d-9dfb-5a942a0bcf50" class=""><mark class="highlight-red"><a href="https://www.notion.so/Philosophy-9b1485d8c4b944e5b18777a25af02f89">Here is our philosophy  </a></mark><mark class="highlight-red"> ⇒ </mark></p>
-            <p id="289780a0-0691-4bc0-88e6-4c1a3c1cac75" class="">
-            </p>
-            <hr id="ab4e0a53-cb1f-42bf-9b11-19de9d10da9b" />
-            <p id="4e457434-46de-4c15-886a-5267efa72869" class="">
-            </p>
-            <div id="7414027b-76bc-48d1-9e8c-1cb8e51ec8fa" class="column-list">
-                <div id="f12a34d0-f97f-4c24-851e-09006e4520d7" style="width:33.333333333333336%" class="column">
-                    <figure id="168505ec-75d1-4371-902f-c915818fc642" class="image">
-                        <a href="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled.png"><img style="width:542px" src="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled.png" /></a>
-                    </figure>
-                    <figure id="92d9f8fa-e554-4972-899c-2504ff17b84e" class="image">
-                        <a href="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%201.png"><img style="width:700px" src="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%201.png" /></a>
-                    </figure>
-                </div>
-                <div id="6adb01da-7102-403b-befe-c9490061bcd4" style="width:33.33333333333333%" class="column">
-                    <figure id="96912c60-1755-4edf-8fb9-6fa774a14051" class="image">
-                        <a href="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%202.png"><img style="width:450px" src="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%202.png" /></a>
-                    </figure>
-                    <figure id="8573c357-9bc0-452b-93f9-5850bc79de1e" class="image">
-                        <a href="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%203.png"><img style="width:700px" src="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%203.png" /></a>
-                    </figure>
-                </div>
-                <div id="2cee94c8-0d05-4d29-a34f-9ffe99f234b3" style="width:33.33333333333334%" class="column">
-                    <figure id="95bc6b98-2442-48b9-a9ab-a7fe7361579f" class="image">
-                        <a href="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%204.png"><img style="width:720px" src="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%204.png" /></a>
-                    </figure>
-                    <figure id="3b21650e-ce97-40d2-a9c8-eb92e7a234ef" class="image">
-                        <a href="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%205.png"><img style="width:393px" src="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%205.png" /></a>
-                    </figure>
-                </div>
-            </div>
-            <p id="7940f55e-71a9-41df-bcd2-c8a19492d928" class="">
-            </p>
-            <hr id="a129220d-f317-44ad-9ad5-2b60dd10897e" />
-            <p id="0b0663a9-ddff-4ff4-be02-0311c984a4ef" class="">
-            </p>
-            <h3 id="01a8066f-8b7b-4de4-8247-efa4482ded28" class=""><mark class="highlight-blue_background">We love stories, we make them. </mark></h3>
-            <p id="5072ac2b-013b-49cc-8a93-1e27300dd99f" class=""><mark class="highlight-red"><a href="http://www.medium.com/tinkerhub">More learning stories</a></mark><mark class="highlight-red"> ⇒ </mark></p>
-            <div id="2e7619c3-6dfd-4054-9a48-169a9e7e13a2" class="column-list">
-                <div id="21bed70f-bc2a-4bc1-8c69-ce46afba8cf5" style="width:50%" class="column">
-                    <figure id="efd50c26-17ed-44f7-920a-c2b51cd88fa3">
-                        <a href="https://medium.com/tinkerhub/from-newbie-to-pro-in-a-month-a-ui-design-challenge-story-18bcedc2a5e0" class="bookmark source">
-                            <div class="bookmark-info">
-                                <div class="bookmark-text">
-                                    <div class="bookmark-title">From Newbie to Pro in a Month: A UI Design Challenge Story!</div>
-                                    <div class="bookmark-description">Harish Kumar is a student of MES College, Marampally, Kerala. At the beginning of April, he was one of the 2.5k applicants of the Learn From Home program. A complete beginner, he rose from newbie status to professional designer in less than a month.</div>
-                                </div>
-                                <div class="bookmark-href"><img src="https://cdn-static-1.medium.com/_/fp/icons/favicon-rebrand-medium.3Y6xpZ-0FSdWDnPM3hSBIA.ico" class="icon bookmark-icon" />https://medium.com/tinkerhub/from-newbie-to-pro-in-a-month-a-ui-design-challenge-story-18bcedc2a5e0</div>
-                            </div><img src="https://miro.medium.com/max/719/1*LSOT7XLM1WOHouEtZUr8-Q.jpeg" class="bookmark-image" /></a>
-                    </figure>
-                </div>
-                <div id="a9bc7edc-cb8d-4ac8-a9fe-e45102d68d8f" style="width:50%" class="column">
-                    <figure id="c5502b41-7704-4c55-8233-35a7590db287">
-                        <a href="https://medium.com/tinkerhub/learning-web-design-in-the-time-of-coronavirus-97056c975371" class="bookmark source">
-                            <div class="bookmark-info">
-                                <div class="bookmark-text">
-                                    <div class="bookmark-title">Learning Web Design in the Time of Coronavirus</div>
-                                    <div class="bookmark-description">I have to start with the pandemic because it halted a lot of my plans. When they announced that the classes in colleges would be suspended due to the outbreak, I was busy planning a workshop in my college.</div>
-                                </div>
-                                <div class="bookmark-href"><img src="https://cdn-static-1.medium.com/_/fp/icons/favicon-rebrand-medium.3Y6xpZ-0FSdWDnPM3hSBIA.ico" class="icon bookmark-icon" />https://medium.com/tinkerhub/learning-web-design-in-the-time-of-coronavirus-97056c975371</div>
-                            </div><img src="https://miro.medium.com/max/1200/1*mbeGECfc4gIJSZhufTTvmg.jpeg" class="bookmark-image" /></a>
-                    </figure>
-                </div>
-            </div>
-            <p id="bb203cfd-5148-43da-8214-7e536c73cc31" class="">
-            </p>
-            <figure id="f8976a98-4475-40e6-8c71-7fc7ab3cc30c" class="link-to-page"><a href="https://www.notion.so/Sitemap-f8976a98447540e68c717fc7ab3cc30c">Sitemap</a></figure>
-        </div>
-    </article>
-</body>
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
 
-</html>
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="4c411e18-e262-43b8-99b7-c9a5533458de" class="page sans"><header><h1 class="page-title">TinkerHub Foundation</h1></header><div class="page-body"><p id="ca84e42b-1c13-4b88-a7fb-5c6597f76740" class="block-color-gray">We are a community of tinkerers, makers, policy geeks &amp; students and are working towards mapping and empowering people who share a passion to innovate.</p><p id="81e464a0-965b-4621-b14b-7c86bb644dc0" class="">
+</p><hr id="63c450e9-b9be-404b-82ff-9a3fe508fb5c"/><div id="61b0063f-2fb0-4025-9934-d051e5a2173a" class="column-list"><div id="cf84f2cc-5f79-482c-9af4-2ad24827d235" style="width:33.33333333333333%" class="column"><figure id="9b1485d8-c4b9-44e5-b187-77a25af02f89" class="link-to-page"><a href="https://www.notion.so/Philosophy-9b1485d8c4b944e5b18777a25af02f89"><span class="icon">🌱</span>Philosophy </a></figure><figure id="dd4b7b4c-19fc-4038-8b0d-941f80880f09" class="link-to-page"><a href="https://www.notion.so/PyLad-dd4b7b4c19fc40388b0d941f80880f09"><span class="icon">🐍</span>PyLad</a></figure></div><div id="c0fbf0a2-364d-4ca4-b8c4-1da1a3df50db" style="width:33.33333333333333%" class="column"><figure id="0f4db9be-ef6b-499f-a809-7321d8a2a3ab" class="link-to-page"><a href="https://www.notion.so/Resources-0f4db9beef6b499fa8097321d8a2a3ab"><span class="icon">🍰</span>Resources</a></figure><p id="d915219a-2af0-4e1c-805b-e910dbf9706b" class="">📝  <a href="https://medium.com/tinkerhub"><strong>Blog</strong></a></p></div><div id="e21560cf-46f0-43c6-9204-ecfd4cbce466" style="width:33.33333333333333%" class="column"><figure id="4125e96b-625b-4ea7-8b02-b387a937207a" class="link-to-page"><a href="https://www.notion.so/Join-us-4125e96b625b4ea78b02b387a937207a"><span class="icon">💝</span>Join us</a></figure><p id="a3c23f43-46c9-4f3c-a81d-11ff58e4d9b1" class="">🤙 <a href="mailto:hello@tinkerhub.org"><strong>Contact</strong></a></p></div></div><hr id="e054b331-109c-4afb-b736-912d621fda11"/><p id="da8abdc9-9ec6-4024-8e0d-3ce764b11f33" class="">
+</p><div id="5fb57600-ddb6-4937-b0bf-3207f4c4eed5" class="column-list"><div id="ece4e1e8-918b-411c-a0cb-3837bf4072a6" style="width:18.75%" class="column"><h3 id="37a09bd1-d2cd-43ba-b454-520a7cbe2d54" class="block-color-orange"><mark class="highlight-orange_background">Why we exist</mark></h3></div><div id="077bcb9d-ba6b-4148-a580-80301c961740" style="width:81.25%" class="column"><blockquote id="62897eb7-85d8-4a90-b931-f72e249e84c2" class="">The world is changing, and we want India to be ready. We&#x27;re here to make sure that everyone has access to the knowledge required to set the course for a better future.</blockquote></div></div><hr id="b66add59-abf0-4f7f-a5bb-f045c1e46a5b"/><p id="f12973d9-6e75-46df-8ecd-6d71e6ddef5b" class="">
+</p><div id="077497fa-bce3-430d-9904-835c7e3eb314" class="column-list"><div id="b5c30c73-93cf-43d3-9a8e-fd9744f846e2" style="width:56.25%" class="column"><h3 id="a87e0454-4c29-4e7a-9f14-82e2bc2904a0" class=""><mark class="highlight-teal_background">Why it matters</mark></h3><h1 id="7ba372ed-d409-4003-b036-caacabbee24d" class=""><em>Because </em>we believe that digital skills are tools of empowerment. </h1><p id="6d3ca63c-366e-4ec0-af1b-ee92cb071316" class="">
+</p><figure id="96f2f937-d408-4eaf-bee5-95b40e209f3f" class="image"><a href="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/IMG_5038.jpg"><img style="width:480px" src="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/IMG_5038.jpg"/></a><figcaption>📸 KuttyCoders Community</figcaption></figure></div><div id="a5311e4c-1bec-4ed6-8e12-53e2d081a229" style="width:43.75%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ec05cc4e-d346-4cd0-90fc-4cf573cf9c26"><div style="font-size:1.5em"><span class="icon">⛑</span></div><div style="width:100%"><strong>40% of employers say a lack of skills is the main reason for entry-level vacancies.</strong> - &#x27;Education to Employment: Designing a System that Works&#x27;, McKinsey 2013</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="28d78569-190e-479a-b28b-acd371f8c004"><div style="font-size:1.5em"><span class="icon">👩🏽‍💻</span></div><div style="width:100%"><strong>Computer Science skills are 65% of the highest value skills </strong>- Analysis by Burning Glass Technologies 2016</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="701b6d73-7400-4629-a684-251582fe5571"><div style="font-size:1.5em"><span class="icon">😍</span></div><div style="width:100%"><strong>By 2030, 80% of the jobs requires some amount of technical skills</strong></div></figure><p id="2ccf3fc6-05fe-45d0-ab08-bd0412716899" class=""><a href="https://www.notion.so/Bible-4444dc2a6d6b4359a7bc303fec7aa168#ab6143a18826409cbcae555039c0763b"><mark class="highlight-red">Read more </mark></a><mark class="highlight-red">⇒ </mark></p><p id="82601b67-69b5-4b57-bcd1-e48a559e718f" class="">
+</p></div></div><hr id="d2caac5f-5380-48bf-9408-891d014a04c1"/><p id="1c1d9ebd-9557-4eab-b252-73fd0bdb82cf" class="">
+</p><div id="6a1bac3c-17e6-4666-96f7-cc29e9502697" class="column-list"><div id="68207bae-adfe-44b1-b512-946448cfdee4" style="width:18.75%" class="column"><h3 id="49bbac8c-6cf3-438c-acb3-d6e234d37bf9" class=""><mark class="highlight-pink_background">How we achieve it</mark></h3></div><div id="abacfc17-f985-4f6f-a10d-711d6c5f2cb7" style="width:81.25%" class="column"><p id="b0a69891-5152-4f4d-b808-9e3925c5f4e6" class="">At TinkerHub, we take pride in<strong> learning on our own and from peers</strong>. That&#x27;s right! We also have a fun team of super cool mentors who take you from beginner to super-coder and collaborator - with tons of help from you, of course! </p></div></div><div id="a4fc5b92-2247-4ea0-b82e-a9403f9de401" class="column-list"><div id="b6d93920-6b08-4404-8d1f-2981fcc71ffb" style="width:49.99999999999999%" class="column"><blockquote id="3563ea32-6bb5-4318-9b61-1c6d5d87bba8" class="">By creating learning experiences that connect, inspire, and engage </blockquote></div><div id="84b7e1cd-8657-4d6e-a01b-d35da18d10f6" style="width:50.000000000000014%" class="column"><blockquote id="066b167d-b936-4c7e-826b-d4ba8fb361c0" class="">By promoting a sense of community and belonging </blockquote></div></div><div id="7d511b22-49e6-4b2a-a4e1-542e468be687" class="column-list"><div id="cf38db8f-5e2a-4637-8369-6506fb8ad912" style="width:50%" class="column"><blockquote id="d883f9a2-f273-45d9-8387-8a27433c132a" class="">By enabling hands-on learning experience with a focus on peer to peer learning techniques </blockquote></div><div id="651aa4d0-7238-4064-9e66-31b8dcf1864e" style="width:50%" class="column"><blockquote id="c6f09bbf-8cac-49e9-a023-1ba06bcb7984" class="">By giving students exposure to internships, career opportunity and scholarships around the world</blockquote></div></div><p id="3453f760-52f5-4627-8cf7-d93f97e03828" class=""><mark class="highlight-red"><a href="https://www.notion.so/tinkerhub/How-we-achieve-it-7dcf4b40c96c498aa2f7f561876665b3">See the detailed plan here</a></mark><mark class="highlight-red"> ⇒ </mark></p><p id="7062199a-4034-4d6d-9dfb-5a942a0bcf50" class=""><mark class="highlight-red"><a href="https://www.notion.so/Philosophy-9b1485d8c4b944e5b18777a25af02f89">Here is our philosophy  </a></mark><mark class="highlight-red"> ⇒ </mark></p><p id="289780a0-0691-4bc0-88e6-4c1a3c1cac75" class="">
+</p><hr id="ab4e0a53-cb1f-42bf-9b11-19de9d10da9b"/><p id="4e457434-46de-4c15-886a-5267efa72869" class="">
+</p><div id="7414027b-76bc-48d1-9e8c-1cb8e51ec8fa" class="column-list"><div id="f12a34d0-f97f-4c24-851e-09006e4520d7" style="width:33.333333333333336%" class="column"><figure id="168505ec-75d1-4371-902f-c915818fc642" class="image"><a href="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled.png"><img style="width:542px" src="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled.png"/></a></figure><figure id="92d9f8fa-e554-4972-899c-2504ff17b84e" class="image"><a href="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%201.png"><img style="width:700px" src="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%201.png"/></a></figure></div><div id="6adb01da-7102-403b-befe-c9490061bcd4" style="width:33.33333333333333%" class="column"><figure id="96912c60-1755-4edf-8fb9-6fa774a14051" class="image"><a href="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%202.png"><img style="width:450px" src="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%202.png"/></a></figure><figure id="8573c357-9bc0-452b-93f9-5850bc79de1e" class="image"><a href="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%203.png"><img style="width:700px" src="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%203.png"/></a></figure></div><div id="2cee94c8-0d05-4d29-a34f-9ffe99f234b3" style="width:33.33333333333334%" class="column"><figure id="95bc6b98-2442-48b9-a9ab-a7fe7361579f" class="image"><a href="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%204.png"><img style="width:720px" src="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%204.png"/></a></figure><figure id="3b21650e-ce97-40d2-a9c8-eb92e7a234ef" class="image"><a href="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%205.png"><img style="width:393px" src="TinkerHub%20Foundation%2096f2f937d4084eafbee595b40e209f3f/Untitled%205.png"/></a></figure></div></div><p id="7940f55e-71a9-41df-bcd2-c8a19492d928" class="">
+</p><hr id="a129220d-f317-44ad-9ad5-2b60dd10897e"/><p id="0b0663a9-ddff-4ff4-be02-0311c984a4ef" class="">
+</p><h3 id="01a8066f-8b7b-4de4-8247-efa4482ded28" class=""><mark class="highlight-blue_background">We love stories, we make them. </mark></h3><p id="5072ac2b-013b-49cc-8a93-1e27300dd99f" class=""><mark class="highlight-red"><a href="http://www.medium.com/tinkerhub">More learning stories</a></mark><mark class="highlight-red"> ⇒ </mark></p><div id="2e7619c3-6dfd-4054-9a48-169a9e7e13a2" class="column-list"><div id="21bed70f-bc2a-4bc1-8c69-ce46afba8cf5" style="width:50%" class="column"><figure id="efd50c26-17ed-44f7-920a-c2b51cd88fa3"><a href="https://medium.com/tinkerhub/from-newbie-to-pro-in-a-month-a-ui-design-challenge-story-18bcedc2a5e0" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">From Newbie to Pro in a Month: A UI Design Challenge Story!</div><div class="bookmark-description">Harish Kumar is a student of MES College, Marampally, Kerala. At the beginning of April, he was one of the 2.5k applicants of the Learn From Home program. A complete beginner, he rose from newbie status to professional designer in less than a month.</div></div><div class="bookmark-href"><img src="https://cdn-static-1.medium.com/_/fp/icons/favicon-rebrand-medium.3Y6xpZ-0FSdWDnPM3hSBIA.ico" class="icon bookmark-icon"/>https://medium.com/tinkerhub/from-newbie-to-pro-in-a-month-a-ui-design-challenge-story-18bcedc2a5e0</div></div><img src="https://miro.medium.com/max/719/1*LSOT7XLM1WOHouEtZUr8-Q.jpeg" class="bookmark-image"/></a></figure></div><div id="a9bc7edc-cb8d-4ac8-a9fe-e45102d68d8f" style="width:50%" class="column"><figure id="c5502b41-7704-4c55-8233-35a7590db287"><a href="https://medium.com/tinkerhub/learning-web-design-in-the-time-of-coronavirus-97056c975371" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Learning Web Design in the Time of Coronavirus</div><div class="bookmark-description">I have to start with the pandemic because it halted a lot of my plans. When they announced that the classes in colleges would be suspended due to the outbreak, I was busy planning a workshop in my college.</div></div><div class="bookmark-href"><img src="https://cdn-static-1.medium.com/_/fp/icons/favicon-rebrand-medium.3Y6xpZ-0FSdWDnPM3hSBIA.ico" class="icon bookmark-icon"/>https://medium.com/tinkerhub/learning-web-design-in-the-time-of-coronavirus-97056c975371</div></div><img src="https://miro.medium.com/max/1200/1*mbeGECfc4gIJSZhufTTvmg.jpeg" class="bookmark-image"/></a></figure></div></div><p id="bb203cfd-5148-43da-8214-7e536c73cc31" class="">
+</p><figure id="f8976a98-4475-40e6-8c71-7fc7ab3cc30c" class="link-to-page"><a href="https://www.notion.so/Sitemap-f8976a98447540e68c717fc7ab3cc30c">Sitemap</a></figure></div></article></body></html>
