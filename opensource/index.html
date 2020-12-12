@@ -5,12 +5,12 @@
       <meta charset="utf-8">
       <title>What is Opensource
       </title>
-      <meta property="og:image" content="https://raw.githubusercontent.com/tinkerhub-org/tinkerhub-org.github.io/master/hactoberfest/assets/nav-logo.png"key="ogimage">
+      <meta property="og:image" content="hactoberfest/assets/nav-logo.png"key="ogimage">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="keywords" content="open source, tinkerhub, webpages, development, learn, HTML, CSS, JavaScript">
       <meta name="description" content="What is Opensource?
                                         Open-source software is a type of computer software in which source code is released under a license in which the copyright holder grants users the rights to use, study, change, and........">
-      <link rel="shortcut icon" href="https://raw.githubusercontent.com/tinkerhub-org/tinkerhub-org.github.io/master/hactoberfest/assets/nav-logo.png" type="image/x-icon">
+      <link rel="shortcut icon" href="hactoberfest/assets/nav-logo.png" type="image/x-icon">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <style type="text/css">
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;1,100&display=swap');
@@ -50,6 +50,19 @@
           margin: 20px auto;
           max-width: 500px;
         }
+        .embed-wrapper {
+          overflow: hidden;
+          padding-top: 56.25%;
+          position: relative;
+        }
+        .embed-wrapper iframe {
+          border: 0;
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
         @media only screen and (min-width: 48em) {
           .lead{
             font-size: 1.2vw;
@@ -66,6 +79,19 @@
             font-size:1.2vw;
             text-shadow: 2px 2px 5px #d6d6d6;
           }
+          .embed-wrapper {
+            overflow: hidden;
+            padding-top: 56.25%;
+            position: relative;
+          }
+          .embed-wrapper iframe {
+            border: 0;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+          }
       </style>
     </head>
     <body>
@@ -81,7 +107,10 @@
             </h1>
             <p class="lead">Now you are aware of what opensource is, but how is it done? We have all our open-source projects hosted on github.com. Watch this video to know how to make your first open-source contribution.
             </p>
-            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dSl_qnWO104" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="embed-wrapper">
+              <iframe width="" height="" src="https://www.youtube.com/embed/dSl_qnWO104?rel=0&modestbranding=0&loop=1&controls=1&autoplay=0&fs=1&showinfo=0&color=red&vq=720p" frameborder="0" allowfullscreen>
+              </iframe>
+            </div>
             <hr class="style-one">
             <h1 class="h1">Opensource with TinkerHub
             </h1>
@@ -97,5 +126,5 @@
           </div>
         </section>
       </div>
-      </body>
-      </html>
+    </body>
+  </html>
