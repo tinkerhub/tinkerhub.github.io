@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on TinkerHub Learning Paths</title>
+    <link>https://learn.tinkerub.org/learn/tags/python/</link>
+    <description>Recent content in python on TinkerHub Learning Paths</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 12 Apr 2021 13:35:55 +0530</lastBuildDate><atom:link href="https://learn.tinkerub.org/learn/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Analysis 📈 using Python 🐍</title>
+      <link>https://learn.tinkerub.org/learn/data-analysis-using-python/</link>
+      <pubDate>Mon, 12 Apr 2021 13:35:55 +0530</pubDate>
+      
+      <guid>https://learn.tinkerub.org/learn/data-analysis-using-python/</guid>
+      <description>A learning path for learning data analysis using python curated by shaji-stark Why is python an excellent option for data analysis :question: :thinking: 1. Easy to learn 🤩 Python is focused on simplicity as well as readability, providing a host of helpful options for data analysts/scientists simultaneously. Thus, newbies can easily utilize its pretty simple syntax to build effective solutions even for complex scenarios.
+2. Well-supported 💁‍♂️ Being in widespread use in industrial alongside academic areas, Python has a broad array of helpful libraries with tons of helpful and support materials.</description>
+    </item>
+    
+    <item>
+      <title>How to learn Python 🐍</title>
+      <link>https://learn.tinkerub.org/learn/python/</link>
+      <pubDate>Mon, 12 Apr 2021 05:33:38 +0530</pubDate>
+      
+      <guid>https://learn.tinkerub.org/learn/python/</guid>
+      <description>Learning path for learning python programming language :sparkles:
+Install and setup stuffs :construction: For learning python you need only two physical devices.
+ A computer running Linux, Windows or MacOS. A working internet connection.  You need to install the following in your system.
+Python 3.* Python 2.7 is not maintained anymore as of 2020. Install python 3 or latest!
+You can install from,
+ Python offical website Anaconda python Miniconda python  Any simple good Code editor No.</description>
+    </item>
+    
+    <item>
+      <title>How to learn Python Flask</title>
+      <link>https://learn.tinkerub.org/learn/flask/</link>
+      <pubDate>Mon, 12 Apr 2021 02:16:57 +0530</pubDate>
+      
+      <guid>https://learn.tinkerub.org/learn/flask/</guid>
+      <description>Python flask is a micro-framework written in python. It is used for building web applications. TinkerHub donation page is an example for a web app made with flask
+Why learn Flask :question:  Flask is a micro-framework. Means it is simple and can be extended to add more stuffs like database Simple as well as best option to build a backend for something you wrote in python - for example a ML model  Install and setup stuffs :construction: Some of the things you need and need not for learning Flask</description>
+    </item>
+    
+    <item>
+      <title>How to learn Django for Web Development🐍</title>
+      <link>https://learn.tinkerub.org/learn/django/</link>
+      <pubDate>Mon, 12 Apr 2021 02:09:49 +0530</pubDate>
+      
+      <guid>https://learn.tinkerub.org/learn/django/</guid>
+      <description>&amp;ldquo;The web framework for perfectionists with deadlines.&amp;rdquo; :sparkles: Learning path for Django curated by Irene:bowtie:
+Why learn Django :question: Django is a popular web framework built on top of python. It helps programmers rapidly create maintainable and flexiable web applications powered by an SQL Database. Django takes care of much of the hassle of web development, so you can focus on writing your app without needing to reinvent the wheel. It is free and open source, has a thriving and active community, great documentation, and many options for free and paid-for support.</description>
+    </item>
+    
+  </channel>
+</rss>

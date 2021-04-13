@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>machine-learning on TinkerHub Learning Paths</title>
+    <link>https://learn.tinkerub.org/learn/tags/machine-learning/</link>
+    <description>Recent content in machine-learning on TinkerHub Learning Paths</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 12 Apr 2021 05:26:57 +0530</lastBuildDate><atom:link href="https://learn.tinkerub.org/learn/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to learn ML</title>
+      <link>https://learn.tinkerub.org/learn/machine-learning/</link>
+      <pubDate>Mon, 12 Apr 2021 05:26:57 +0530</pubDate>
+      
+      <guid>https://learn.tinkerub.org/learn/machine-learning/</guid>
+      <description>Learning path for AI/ML :sparkles:
+Programming Knowledge Programming knowledge is a must obviously.
+Learn Python :snake:  Python basics: variables, conditions, loops..etc..etc..etc But most importantly installing packages, importing, using. Writing methods and using decorators. Object-oriented Python: class, inheritance.  :bulb: The book automate the boring stuff is a good resource.
+:crystal_ball: Articles and Youtube videos by Sentdex is awesome!
+Install and setup stuffs :construction: Things you need and need not.</description>
+    </item>
+    
+  </channel>
+</rss>
